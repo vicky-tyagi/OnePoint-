@@ -1,19 +1,23 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+import PropTypes from 'prop-types'
+import noop from 'lodash/noop'
 import { connect } from 'react-redux'
 
-export const Main = () => {
+function Main() {
   return (
-    <div style={{ textAlign: 'center' , marginTop:'5em' }}>Please Attract you Html Here ? </div>
+    <div style={{ textAlign: 'center', marginTop: '5em' }}>Please Attract you Html Here ? </div>
   )
 }
 
 Main.propTypes = {
-  second: PropTypes.third
+  dispatch: PropTypes.func
+}
+
+Main.defaulProps = {
+  dispatch: noop,
+  loader: false,
 }
 
 const mapStateToProps = () => ({})
 
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default connect(mapStateToProps)(Main)
