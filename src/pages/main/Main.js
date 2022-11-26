@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import noop from 'lodash/noop'
 import { connect } from 'react-redux'
+import Booking from '../booking/Booking'
 
 function Main() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '5em' }}>Please Attract you Html Here ? </div>
+    <Booking />
   )
 }
 

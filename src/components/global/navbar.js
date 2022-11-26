@@ -1,71 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { EMPTY_ARRAY, EMPTY_OBJECT } from '../../constants/globalConstants'
-import URL from '../../constants/urls'
 import noop from 'lodash/noop'
-import { useNavigate } from 'react-router-dom'
-function NavbarComponent(props) {
-	const { isAuthenticated, userData, permitData } = props
-	const [isLoggedIn, setIsLoggedIn] = useState(false)
-	const [userDetails, setuserDetails] = useState(false)
-	const { pathname } = useLocation()
-	const navigate = useNavigate()
-
-	useEffect(() => {
-
-		const permitDetails = permitData?.data
-		const userDetailsPermit = permitDetails?.userDetails
-		if (isAuthenticated) {
-			setIsLoggedIn(true)
-			const getuserDatafromLocal = JSON.parse(localStorage.getItem('userData'))
-			const userDetails = getuserDatafromLocal?.user
-			if (getuserDatafromLocal?.access_token && getuserDatafromLocal?.access_token != '') {
-				setuserDetails(userDetails)
-			} else {
-				const userDetails = userData?.data?.user
-				setuserDetails(userDetails)
-			}
-		}
-		else if (userDetailsPermit?.access_token && userDetailsPermit?.access_token != '') {
-			setIsLoggedIn(true)
-			setuserDetails(userDetailsPermit?.user)
-		}
-		else {
-			const getuserDatafromLocal = JSON.parse(localStorage.getItem('userData'))
-			const userDetails = getuserDatafromLocal?.user
-			if (getuserDatafromLocal?.access_token && getuserDatafromLocal?.access_token != '') {
-				setuserDetails(userDetails)
-				setIsLoggedIn(true)
-			} else {
-				setIsLoggedIn(false)
-			}
-		}
-	}, [EMPTY_ARRAY, isAuthenticated, permitData])
-	
-	useEffect(() => {
-		window.scrollTo(0, 0)
-	}, [pathname])
-
-	const handleLogout = () => {
-
-		localStorage.removeItem('userData')
-		localStorage.removeItem('isLoggedIn')
-		setIsLoggedIn(false)
-		navigate(URL.HOME)
-		navigate(0)
-
-	}
-
+import PropTypes from 'prop-types'
+function NavbarComponent() {
 	return (
 		<header>
-			<nav className="navbar navbar-expand-sm navbar-light shadow">
+			<nav className="navbar navbar-expand-lg bg-white shadow shadow-sm">
 				<div className="container">
-					<a
-						href=''
-					>
-							{/* <img height="50px" src="/assets/images/logo.png"></img> */}
+					<a className='navbar-brand' href=''>
+						<img src="https://onepointservices.co.in/images/assets/logo.png" width="50px" alt="One Point Services" />
 						{/* <img src={Logo} width="60px" alt="mapco" /> */}
 					</a>
 
@@ -73,96 +16,104 @@ function NavbarComponent(props) {
 						aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse" id="navbarID">
-						<ul className="navbar-nav ms-auto">
-							<li className="nav-item ">
-								<a
-									href=''
-									className="nav-link active" rel="noreferrer"
-								>  Home
-								</a>
+					<div className="collapse navbar-collapse " id="navbarSupportedContent">
+						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li className="nav-item">
+								<a href='' className="nav-link active">Home</a>
+							</li>
+							<li className="nav-item dropdown">
+								<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Service </a>
+								<ul className="dropdown-menu">
+									<li>
+										<a className="dropdown-item" href=''>Refrigerator Repair</a>
+									</li>
+									<li>
+										<a className="dropdown-item" href=''>Air Conditioner Service</a>
+									</li>
+									<li>
+										<a className="dropdown-item" href=''>Electrician</a>
+									</li>
+									<li>
+										<a className="dropdown-item" href=''>Washing Machine Repair</a>
+									</li>
+									<li>
+										<a className="dropdown-item" href=''>Microwave Repair</a>
+									</li>
+									<li>
+										<a className="dropdown-item" href=''>All Services</a>
+									</li>
+								</ul>
+							</li>
+							<li className="nav-item">
+								<a href='#' className="nav-link">About Us</a>
 							</li>
 							<li className="nav-item ">
-								<a
-									href='#'
-									className="nav-link" rel="noreferrer"
-								>  Join Our Team
-								</a>
+								<a href='#' className="nav-link">Contact</a>
 							</li>
-							<li className="nav-item ">
-								<a
-									href='#'
-									className="nav-link" rel="noreferrer"
-								>  Our Services
-								</a>
-							</li>
-							<li className="nav-item ">
-								<a
-									href='#'
-									className="nav-link" rel="noreferrer"
-								>  About Us
-								</a>
-							</li>
-							<li className="nav-item ">
-								<a
-									href='#'
-									className="nav-link" rel="noreferrer"
-								>Contact
-								</a>
-							</li>
-
-							{isLoggedIn ?
-								<li className="nav-item dropdown border-primary border">
-									<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-										aria-expanded="false">
-										<b>{userDetails?.name}</b>
-									</a>
-									<ul className="dropdown-menu dropdown-menu-end">
-										
-										<li>
-											<Link className="dropdown-item" to={URL.USER}>Dashboard</Link></li>
-										<li>
-											<hr className="dropdown-divider" />
-										</li>
-										<li>
-											<Link className="dropdown-item" to={URL.USER_PROFILE}>Profile</Link></li>
-										<li>
-										<hr className="dropdown-divider" /></li>
-										<li><button type='button' className="dropdown-item" onClick={(e) => handleLogout(e)}>Log Out</button></li>
-									</ul>
-								</li> : <li className="nav-item "></li>}
 						</ul>
-
 					</div>
-					</div>
-				</nav>
-			</header>
+				</div>
+			</nav>
+		</header>
 	)
 }
+
+{/* <nav class="navbar navbar-expand-lg bg-white shadow shadow-sm">
+        <div class="container"> 
+		<a class="navbar-brand" href="https://onepointservices.co.in/"> 
+		<img src="https://onepointservices.co.in/images/assets/logo.png" width="50px" alt="One Point Services">
+            </a> 
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> 
+			</button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+					<a class="nav-link active" href="https://onepointservices.co.in/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown"> 
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Service </a>
+                        <ul class="dropdown-menu">
+                            <li>
+							   <a class="dropdown-item" href="https://onepointservices.co.in/service/fridge-repair">Refrigerator Repair</a>
+                            </li>
+                            <li>
+							   <a class="dropdown-item" href="https://onepointservices.co.in/service/ac-service">Air Conditioner Service</a>
+							   </li>
+                            <li>
+							   <a class="dropdown-item"  href="https://onepointservices.co.in/service/electrician">Electrician</a>
+							</li>
+                            <li>
+							   <a class="dropdown-item" href="https://onepointservices.co.in/service/washing-machine-repair-service">Washing Machine Repair</a>
+							</li>
+                            <li>
+							   <a class="dropdown-item" href="https://onepointservices.co.in/service/microwave-repair">Microwave Repair</a>
+                            </li>
+                            <li> 
+							  <a class="dropdown-item" href="https://onepointservices.co.in/services">All Services</a>
+							</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://onepointservices.co.in/about-us">About Us</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://onepointservices.co.in/contact-us">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> */}
 
 
 NavbarComponent.propTypes = {
 	dispatch: PropTypes.func,
-	isAuthenticated: PropTypes.bool,
-	userData: PropTypes.object,
-	permitData: PropTypes.object,
-	isModalOpen: PropTypes.bool,
 }
 
 NavbarComponent.defaulProps = {
 	dispatch: noop,
-	isAuthenticated: false,
-	userData: EMPTY_OBJECT,
-	permitData: EMPTY_OBJECT,
-	isModalOpen: false,
 }
 
-function mapStateToProps({ login, paymentReducer, basicInfoReducer }) {
-	return {
-		isAuthenticated: login?.isAuthenticated,
-		userData: login?.data,
-		permitData: paymentReducer?.data,
-		isModalOpen: basicInfoReducer?.isModalOpen
-	}
+function mapStateToProps() {
+	return {}
 }
 export default connect(mapStateToProps)(NavbarComponent)
