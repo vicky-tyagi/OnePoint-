@@ -230,7 +230,7 @@ export const CARDTYPES =
 	MC: 'MC'
 }
 
-export const createData = (data , dataCount) => {
+export const createData = (data, dataCount) => {
 	const originData = []
 	for (let i = 1; i < dataCount; i++) {
 		originData.push({
@@ -269,4 +269,23 @@ export const facilityListPortable = [
 ]
 
 
+export const imagesUrlsForBrands = [
+	{ png: require('../assets/images/clients/blue star.png') },
+	{ png: require('../assets/images/clients/carrier.png') },
+	{ png: require('../assets/images/clients/daikin.png') },
+	{ png: require('../assets/images/clients/haier.png') },
+	{ png: require('../assets/images/clients/lg.png') },
+	{ png: require('../assets/images/clients/lloyd.png') },
+	{ png: require('../assets/images/clients/marq.png') },
+	{ png: require('../assets/images/clients/mitsubishi.png') },
+]
 
+export const RepairLocation = [
+	'Lucknow', 'Pune', 'delhi', 'Kanpur', 'Lucknow', 'Kanpur',
+	'Kanpur', 'Lucknow', 'Kanpur', 'delhi', 'Pune', 'Lucknow',
+	'Lucknow', 'Pune', 'delhi', 'Kanpur', 'Lucknow', 'Kanpur',
+	'Kanpur', 'Lucknow', 'Kanpur', 'delhi', 'Pune', 'Lucknow',
+	'Lucknow', 'Pune', 'delhi', 'Kanpur', 'Lucknow', 'Kanpur',
+	'Kanpur', 'Lucknow', 'Kanpur', 'delhi', 'Pune', 'Lucknow',
+	'Lucknow', 'Pune', 'delhi', 'Kanpur', 'Lucknow', 'Kanpur',
+]
