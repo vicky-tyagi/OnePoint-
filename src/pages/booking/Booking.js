@@ -55,7 +55,7 @@ function Booking() {
                                                     <li className="shadow bg-white p-3" key={facilityListSplitIndex}>
                                                         <div className="row  d-flex justify-content-between align-items-center">
                                                             <div className="col-md-2 col-lg-2 col-4 mb-3 mb-sm-0">
-                                                                <img src="/assets/images/ac-servicing.jpg" className="img-fluid rounded-3" alt="Cotton T-shirt" />
+                                                                <img src={facilityListSplitItem?.png?.png} className="img-fluid rounded-3" alt="Cotton T-shirt" />
                                                             </div>
                                                             <div className="col-md-5 col-lg-4 col-8 mb-3 mb-sm-0">
                                                                 <h5 className="text-black">{facilityListSplitItem?.facilityName}</h5>
@@ -87,8 +87,7 @@ function Booking() {
                                                     <li className="shadow bg-white p-3" key={facilityListPortableIndex}>
                                                         <div className="row  d-flex justify-content-between align-items-center">
                                                             <div className="col-md-2 col-lg-2 col-4 mb-3 mb-sm-0">
-                                                                <img src="/assets/images/ac-servicing.jpg" className="img-fluid rounded-3"
-                                                                    alt="Cotton T-shirt" />
+                                                                <img src={facilityListPortableItem?.png?.png} className="img-fluid rounded-3" alt="Cotton T-shirt" />
                                                             </div>
                                                             <div className="col-md-5 col-lg-4 col-8 mb-3 mb-sm-0">
                                                                 <h5 className="text-black">{facilityListPortableItem?.facilityName}</h5>

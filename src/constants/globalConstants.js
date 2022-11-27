@@ -251,21 +251,21 @@ export const BookingSectionHeader = [
 
 
 export const facilityListSplit = [
-	{ facilityName: 'Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 1 },
-	{ facilityName: 'Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 2 },
-	{ facilityName: 'Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 3 },
-	{ facilityName: 'Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 4 },
-	{ facilityName: 'Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 5 },
-	{ facilityName: 'Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 6 },
+	{ facilityName: 'Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/ac-servicing.jpg') }, id: 1 },
+	{ facilityName: 'Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/gas-filling.jpg') }, id: 2 },
+	{ facilityName: 'Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/washer-cleaning.jpg') }, id: 3 },
+	{ facilityName: 'Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/ac-servicing.jpg') }, id: 4 },
+	{ facilityName: 'Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/gas-filling.jpg') }, id: 5 },
+	{ facilityName: 'Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/washer-cleaning.jpg') }, id: 6 },
 ]
 
 export const facilityListPortable = [
-	{ facilityName: 'Portable Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 1 },
-	{ facilityName: 'Portable Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 2 },
-	{ facilityName: 'Portable Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 3 },
-	{ facilityName: 'Portable Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 4 },
-	{ facilityName: 'Portable Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 5 },
-	{ facilityName: 'Portable Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', id: 6 },
+	{ facilityName: 'Portable Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/ac-servicing.jpg') }, id: 1 },
+	{ facilityName: 'Portable Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/gas-filling.jpg') }, id: 2 },
+	{ facilityName: 'Portable Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/washer-cleaning.jpg') }, id: 3 },
+	{ facilityName: 'Portable Filter Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/ac-servicing.jpg') }, id: 4 },
+	{ facilityName: 'Portable Gas Filling', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/gas-filling.jpg') }, id: 5 },
+	{ facilityName: 'Portable Preasure Cleaning', facilityMessage: 'This is a wider card with supporting text below', facilityAmount: '450.00', png: { png: require('../assets/images/washer-cleaning.jpg') }, id: 6 },
 ]
 
 
